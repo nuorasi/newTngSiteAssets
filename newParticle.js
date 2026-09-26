@@ -4,7 +4,7 @@ console.log(
     "Canvas:",
     document.getElementById('particleCanvas')
 );
-
+// VERSION: 2026-09-26-12:48
 console.log(">>>>>>>>>>>>>>>>>>>>THREE.js: THREE THREE THREE THREE THREE THREE");
 
 // 1. Setup Three.js Scene, Camera, and Renderer
