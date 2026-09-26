@@ -5,7 +5,7 @@ console.log(
     document.getElementById('particleCanvas')
 );
 // VERSION: 2026-09-26-12:48
-console.log(">>>>>>>>>>>>>>>>>>>>THREE.js: THREE THREE THREE THREE THREE THREE");
+console.log(">>>>>>>>>>>>>>>>>>>>THREE.js: THREE THREE THREE THREE THREE THREEX");
 
 // 1. Setup Three.js Scene, Camera, and Renderer
 const scene = new THREE.Scene();
@@ -23,10 +23,15 @@ const renderer = new THREE.WebGLRenderer({
     canvas: document.getElementById('particleCanvas'),
     alpha: true
 });
+//
+// renderer.setSize(
+//     window.innerWidth,
+//     window.innerHeightfm
+// );
 
 renderer.setSize(
     window.innerWidth,
-    window.innerHeightfm
+    window.innerHeight
 );
 
 renderer.setPixelRatio(
@@ -938,3 +943,13 @@ function animate() {
 
 // Start animation loop
 animate();
+console.log(
+    "Canvas final size:",
+    renderer.domElement.width,
+    renderer.domElement.height
+);
+
+console.log(
+    ">>>>>>Canvas CSS:",
+    renderer.domElement.getBoundingClientRect()
+);
