@@ -7,7 +7,7 @@ console.log(
 
 console.log(
     ">>>>>>>>>>>>>>>>>>>>THREE.js:",
-    THREE
+    THREE THREE
 );
 
 // 1. Setup Three.js Scene, Camera, and Renderer
