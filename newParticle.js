@@ -1,4 +1,14 @@
-console.log("Hello from newParticle.js!!!!!!!!!!!!!!");
+console.log("Hello FROM newParticle.js!!!!!!!!!!!!!!");
+
+console.log(
+    "Canvas:",
+    document.getElementById('particleCanvas')
+);
+
+console.log(
+    "THREE:",
+    THREE
+);
 
 // 1. Setup Three.js Scene, Camera, and Renderer
 const scene = new THREE.Scene();
@@ -27,21 +37,71 @@ renderer.setPixelRatio(
 );
 
 
-// Handle window resizing
-window.addEventListener('resize', () => {
+// Handle window resizing OLD
+// window.addEventListener('resize', () => {
+//
+//     renderer.setSize(
+//         window.innerWidth,
+//         window.innerHeight
+//     );
+//
+//     camera.aspect =
+//         window.innerWidth / window.innerHeight;
+//
+//     camera.updateProjectionMatrix();
+//
+// });
+
+function resizeRenderer() {
+
+    const canvas =
+        document.getElementById('particleCanvas');
+
+    if (!canvas) return;
+
+
+    const width =
+        window.innerWidth;
+
+
+    const height =
+        Math.max(
+            window.innerHeight,
+            1
+        );
+
 
     renderer.setSize(
-        window.innerWidth,
-        window.innerHeight
+        width,
+        height,
+        false
     );
 
+
+    renderer.setPixelRatio(
+        Math.min(
+            window.devicePixelRatio,
+            2
+        )
+    );
+
+
     camera.aspect =
-        window.innerWidth / window.innerHeight;
+        width / height;
+
 
     camera.updateProjectionMatrix();
 
-});
+}
 
+
+window.addEventListener(
+    'resize',
+    resizeRenderer
+);
+
+
+resizeRenderer();
 
 // 2. Setup Particles (Swarming Orbs)
 const particleCount = 1300;
