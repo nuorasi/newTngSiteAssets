@@ -7,7 +7,7 @@ console.log(
 
 console.log(
     "THREE:",
-    THREE
+    THREE.js
 );
 
 // 1. Setup Three.js Scene, Camera, and Renderer
@@ -29,7 +29,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setSize(
     window.innerWidth,
-    window.innerHeight
+    window.innerHeightfm
 );
 
 renderer.setPixelRatio(
