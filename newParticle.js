@@ -1,10 +1,10 @@
-console.log("Hello FROM newParticle.js!!!!!!!!!!!!!! REV 3.3");
+console.log("Hello FROM newParticle.js!!!!!!!!!!!!!! REV 3.3 revized");
 
 console.log(
     "Canvas:",
     document.getElementById('particleCanvas')
 );
-// VERSION: 2026-09-27-07:17
+// VERSION: 2026-09-26-12:48
 console.log(">>>>>>>>>>>>>>>>>>>>THREE.js: THREE THREE THREE THREE THREE THREEX");
 
 // 1. Setup Three.js Scene, Camera, and Renderer
@@ -30,8 +30,8 @@ const renderer = new THREE.WebGLRenderer({
 // );
 
 renderer.setSize(
-    document.documentElement.clientWidth,
-    document.documentElement.clientHeight
+    window.innerWidth,
+    window.innerHeight
 );
 
 renderer.setPixelRatio(
@@ -97,7 +97,13 @@ function resizeRenderer() {
 }
 
 
+window.addEventListener(
+    'resize',
+    resizeRenderer
+);
 
+
+resizeRenderer();
 
 // 2. Setup Particles (Swarming Orbs)
 const particleCount = 1300;
@@ -944,6 +950,6 @@ console.log(
 );
 
 console.log(
-    ">>>>>>Canvas CSS:",
+    "Canvas CSS:",
     renderer.domElement.getBoundingClientRect()
 );
